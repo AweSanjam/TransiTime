@@ -1,0 +1,4 @@
+# Copy to local.properties (never commit local.properties).
+sdk.dir=/path/to/Android/Sdk
+# Optional: Transit API key (free at https://transitapp.com/apis). Without it the app uses Transitous only.
+transit.apiKey=YOUR_KEY

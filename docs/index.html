@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transi-Time</title>
+<meta name="description" content="Transi-Time: live departures from the nearest transit stop, on your Wear OS watch.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="brand"><img src="icon.svg" alt="" width="64" height="64"><h1>Transi-Time</h1></div>
+<p class="tag">Live departures from the transit stop nearest to you, right on your wrist. Every route at the stop, real-time countdowns for each direction, refreshed every 25 seconds while open.</p>
+<div class="btns">
+<a class="btn primary" href="https://github.com/AweSanjam/TransiTime/releases">Download from Releases</a>
+<a class="btn" href="https://github.com/AweSanjam/TransiTime">Source on GitHub</a>
+<a class="btn" href="#open-source">Open source</a>
+</div>
+<span class="badge">Wear OS</span>
+</div></header>
+<main>
+<section id="features"><div class="wrap"><h2>What it does</h2>
+<ul><li>Finds your location and picks the closest stop, with distance and last sync time.</li><li>Every route at the stop with the next departures in each direction; a pulsing dot marks real-time times.</li><li>SkyTrain and other rail lines in their own colour, apart from buses.</li><li>Pin routes to keep them at the top.</li><li>Full departure list per direction, with countdowns and clock times in 12 h or 24 h (follows the watch).</li><li>Data from <a href="https://transitapp.com">Transit</a> (API key) with keyless <a href="https://transitous.org">Transitous</a> as the fallback. Pick Auto, Transit or Transitous in Settings.</li><li>Location and network are used only while the app is on screen.</li></ul>
+</div></section>
+<section id="layouts"><div class="wrap"><h2>Three layouts, same features</h2>
+<p>Triple-tap with two fingers anywhere to switch: Classic → Pod → Radar.</p><div class="grid"><div class="card"><h3>Classic</h3><p>Material 3 cards in a scrolling list. Swipe a card to switch direction, tap for all departures, hold to pin.</p></div><div class="card"><h3>Pod</h3><p>An iPod-style menu in radar green. Nothing is a button: drag or turn the crown to move, tap anywhere to open, hold to pin, swipe right to go back.</p></div><div class="card"><h3>Radar</h3><p>Each route is a blip; pinned routes sit inside the dashed ring. Pinch or turn the crown to zoom; at 1.6× each blip shows its next times. Tap the centre to sync.</p></div></div>
+</div></section>
+<section id="install"><div class="wrap"><h2>Install</h2>
+<p>Download <code>TransiTime.apk</code> from <a href="https://github.com/AweSanjam/TransiTime/releases">Releases</a> and sideload it on a Wear OS 3+ watch:</p><pre>adb -s &lt;watch&gt; install -r TransiTime.apk</pre>
+</div></section>
+<section id="build"><div class="wrap"><h2>Build from source</h2>
+<p>Needs JDK 17 and the Android SDK (compileSdk 35). Put your own free Transit API key in <code>local.properties</code> (never commit it):</p><pre>cp local.properties.example local.properties
+# edit transit.apiKey=YOUR_KEY
+./gradlew assembleRelease</pre><p>Without a key the app uses Transitous only.</p><p class="note">The original project folder was lost. <code>recovered-partial/</code> holds the recovered Kotlin sources (activity, the three layouts, controller and both data sources); the Gradle files and resources still need to be recreated before it builds.</p>
+</div></section>
+<section id="credits"><div class="wrap"><h2>Credits</h2>
+<p>Departure data powered by <a href="https://transitapp.com">Transit</a>. Keyless fallback by <a href="https://transitous.org">Transitous</a> (community-run, open data).</p>
+</div></section>
+<section id="open-source"><div class="wrap"><h2>Open source</h2>
+<div class="oss">
+<p><strong>Transi-Time will be released as open source.</strong> The code is published under the MIT License: you can use, study, change and share it, including in your own projects, as long as the copyright notice and licence text stay with it.</p>
+<p class="note">See <a href="https://github.com/AweSanjam/TransiTime/blob/main/LICENSE">LICENSE</a>. Issues and pull requests are welcome once the repository is public.</p>
+</div></div></section>
+</main>
+<footer><div class="wrap">© 2026 Sanjamjit Singh · MIT License · <a href="https://github.com/AweSanjam/TransiTime">github.com/AweSanjam/TransiTime</a><br>No trackers, no analytics, no cookies on this page.</div></footer>
+</body>
+</html>
